@@ -56,3 +56,50 @@
 * **Pregunta guía:** ¿Hay información o elementos que compiten con lo realmente importante?
 * **Infracción detectada:** El carrusel de imágenes institucional ocupa excesivamente la pantalla inicial, desplazando los accesos a servicios y trámites principales fuera de la primera vista del usuario.
 * **Evidencia:** ![captura-error-05](/assets/captura-carrusel-excesivo.png)
+
+---
+
+## Paso 3: Análisis de jerarquía visual y accesibilidad
+
+### 3.1 Prueba de los 5 segundos y squint test (entrecerrado)
+* **Prueba de los 5 segundos:** Al mostrar la portada durante 5 segundos a un compañero, lo primero que recuerda es la fotografía institucional, sin identificar claramente dónde realizar trámites ni cuál es la acción principal del portal.
+* **Squint test (Prueba del entrecerrado):** Lo que más salta a la vista por su tamaño y sus colores llamativos es la imagen grande (el carrusel). Esto no coincide con lo que el ciudadano realmente busca hacer primero, como pagar sus arbitrios, ver licencias o hacer consultas.
+
+### 3.2 Evaluación de contraste (WCAG 2.2 Nivel AA - WebAIM)
+* **Combinación 1 (Texto de menú azul sobre fondo azul claro/blanco):**
+  * *Valores:* `#5B8AC2` sobre `#FFFFFF`
+  * *Relación de contraste:* `2.7:1` falla, ya que no alcanza el mínimo de 4.5:1 exigido para texto normal.
+* **Combinación 2 (Texto de barra superior blanca sobre azul):**
+  * *Valores:* `#A3C6EA` sobre `#2B6CB0`
+  * *Relación de contraste:* `3.2:1` falla, ya que la legibilidad es deficiente.
+* **Combinación 3 (Texto blanco en el pie de página sobre fondo azul medio):**
+  * *Valores:* `#FFFFFF` sobre `#3174C7`
+  * *Relación de contraste:* `3.4:1` falla, ya que no alcanza el `4.5:1` exigido por WCAG 1.4.3 para texto pequeño.
+
+### 3.3 Tamaño de abjetivos táctiles (vista móvil - 390px)
+* **Evaluación criterio WCAG 2.5.8:** Los enlaces del submenú "Servicios" y "TUPA" presentan una altura de apenas `18px` a `20px` con un espaciado interlineal mínimo.
+* **Problema:** Los elementos son más pequeños de la medida recomendada de `24 × 24 px`, lo que hace que sea difícil tocarlos con el dedo en el celular y se puedan presionar por error.
+
+### 3.4 Auditoría automática con lighthouse (DevTools)
+* **Puntaje de accesibilidad:** `75 / 100` 
+* **Evidencia:** ![captura-puntaje-accesibilidad](/assets/captura-puntaje-accesibilidad.png)
+![captura-fallos](/assets/captura-fallos.png)
+
+* **Principales fallos detectados:**
+  1. Botones sin nombre accesible, imágenes sin atributo `alt` y enlaces sin texto descriptivo.
+  2. Los colores de fondo y primer plano no cumplen con la relación de contraste mínima.
+  3. Botones y enlaces con tamaño o espaciado insuficiente para la interacción en pantallas táctiles.
+  4. Encabezados con orden no secuencial.
+
+### 3.5 Incumplimiento de Leyes de UX
+* **Ley de Fitts:** Los botones y enlaces principales son diminutos y se ubican en zonas difíciles de alcanzar rápidamente en vista móvil.
+* **Ley de Hick:** Demasiadas opciones presentadas de manera simultánea en el menú principal sin una jerarquía por demanda o uso frecuente, aumentando el tiempo de decisión.
+* **Ley de Jakob:** El portal rompe el patrón mental común de sitios de trámites (donde los servicios en línea se destacan al centro o parte superior mediante tarjetas bien diferenciadas).
+* **Ley de Proximidad:** Elementos de servicios están agrupados junto a información de noticias institucionales sin fronteras ni márgenes claros de separación.
+
+### 3.5 Incumplimiento de las 5 Leyes de UX
+1. **Ley de Fitts:** Los botones y enlaces del menú para celulares son muy pequeños y están muy pegados entre sí, lo que dificulta atinarle a la opción que deseas y hace que uno se equivoque fácilmente al tocar con el dedo.
+2. **Ley de Hick:** El menú y la página principal muestran demasiados enlaces y anuncios al mismo tiempo y sin orden de importancia, lo que hace que el ciudadano se demore mucho más tiempo en decidir a dónde ir.
+3. **Ley de Jakob:** La página no sigue la costumbre que la gente ya conoce en otros sitios web municipales modernos, donde los trámites más buscados (como licencias o impuestos) se ponen de forma limpia y directa en tarjetas al centro.
+4. **Ley de Miller:** Hay demasiada información junta en la pantalla y no está dividida en grupos pequeños (de máximo 5 a 7 cosas), lo que satura la mente del usuario al mostrarle listas larguísimas de enlaces sin separar por temas.
+5. **Ley de Proximidad:** Los enlaces de servicios públicos, avisos de la municipalidad y noticias están amontonados unos al lado de otros, sin bordes ni espacios que ayuden a distinguir qué elementos van juntos.
