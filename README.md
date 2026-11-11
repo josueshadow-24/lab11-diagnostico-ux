@@ -18,7 +18,7 @@
 
 * **Vista Móvil (Mobile 390px):**
 * 
-    ![captura-mobile-01](/assets/captura-mobile-01.png)
+  ![captura-mobile-01](/assets/captura-mobile-01.png)
 
 ### 1.3 Definición de la tarea del usuario
 * **Tarea a realizar:** Consultar la validez de una licencia de funcionamiento o el estado de un expediente municipal desde el menú de Servicios.
@@ -82,7 +82,8 @@
 
 ### 3.4 Auditoría automática con lighthouse (DevTools)
 * **Puntaje de accesibilidad:** `75 / 100` 
-* **Evidencia:** ![captura-puntaje-accesibilidad](/assets/captura-puntaje-accesibilidad.png)
+* **Evidencia:** 
+  ![captura-puntaje-accesibilidad](/assets/captura-puntaje-accesibilidad.png)
 ![captura-fallos](/assets/captura-fallos.png)
 
 * **Principales fallos detectados:**
@@ -90,12 +91,6 @@
   2. Los colores de fondo y primer plano no cumplen con la relación de contraste mínima.
   3. Botones y enlaces con tamaño o espaciado insuficiente para la interacción en pantallas táctiles.
   4. Encabezados con orden no secuencial.
-
-### 3.5 Incumplimiento de Leyes de UX
-* **Ley de Fitts:** Los botones y enlaces principales son diminutos y se ubican en zonas difíciles de alcanzar rápidamente en vista móvil.
-* **Ley de Hick:** Demasiadas opciones presentadas de manera simultánea en el menú principal sin una jerarquía por demanda o uso frecuente, aumentando el tiempo de decisión.
-* **Ley de Jakob:** El portal rompe el patrón mental común de sitios de trámites (donde los servicios en línea se destacan al centro o parte superior mediante tarjetas bien diferenciadas).
-* **Ley de Proximidad:** Elementos de servicios están agrupados junto a información de noticias institucionales sin fronteras ni márgenes claros de separación.
 
 ### 3.5 Incumplimiento de las 5 Leyes de UX
 1. **Ley de Fitts:** Los botones y enlaces del menú para celulares son muy pequeños y están muy pegados entre sí, lo que dificulta atinarle a la opción que deseas y hace que uno se equivoque fácilmente al tocar con el dedo.
@@ -116,3 +111,28 @@ Consolidación de los problemas detectados en la interfaz de la Municipalidad Di
 | **2** | Menú desplegable utiliza lenguaje de oficina ("TUPA", "CIAM") y los enlaces en celular tienen áreas para presionar muy pequeñas y muy pegadas entre sí. | Vista móvil 390px ![captura-mobile-02](/assets/captura-mobile-02.png) | H2 Relación con el mundo real / Ley de Fitts | **3** | Cambiar los nombres de los menús por palabras más claras que cualquier ciudadano entienda y hacer que los botones sean más grandes (de al menos 44 x 44 px) para que se puedan tocar con comodidad en el celular. |
 | **3** | La portada tiene colores con muy poco contraste (letras azules sobre fondo blanco en el pie de página), lo que dificulta la lectura, además de botones e imágenes que no tienen descripción en la revisión técnica. | Portada e informe Lighthouse 75/100 ![captura-desktop-01](/assets/captura-desktop-01.png)  ![captura-footer](/assets/captura-footer.png) ![captura-puntaje-accesibilidad](/assets/captura-puntaje-accesibilidad.png) | WCAG 2.2 / Ley de Jakob / H4 Consistencia y estándares | **3** | Mejorar los colores para que se distingan bieny logren una relación de contraste mínima de 4.5:1 (WCAG AA)  y agregarle descripciones a las imágenes y a los botones para que sean accesibles |
 | **4** | El carrusel de imágenes de la municipalidad es demasiado grande y ocupa casi toda la pantalla de inicio, lo que empuja los accesos a los trámites principales hacia abajo, obligando al usuario a bajar la página para poder verlos. | Portada principal ![captura-error-05](/assets/captura-carrusel-excesivo.png) | H8 Diseño estético y minimalista / Ley de Hick | **2** | Hacer más pequeño el carrusel de imágenes del inicio y poner una sección destacada con botones o accesos directos a los trámites que más realiza la gente. |
+
+---
+
+## Paso 5: Rediseño de la interfaz (Figma)
+
+Se diseñó la propuesta de rediseño de alta fidelidad para la pantalla principal del portal municipal en vista Desktop (1440px) y Mobile (390px), aplicando las siguientes especificaciones técnicas de UI/UX:
+
+### 5.1 Sistema de retícula 
+* 12 columnas en Desktop (1440px) y 4 columnas en Mobile (390px) con 16px de margen para alineación simétrica de componentes.
+
+### 5.2 Correcciones Anotadas (Llamadas Numeradas ① al ④)
+
+1. **① Solución al Problema 1 (H1 Visibilidad / Estado de Carga):**
+Rediseñar la sección de consultas para que aparezca un aviso o mensaje en pantalla que diga *"Buscando expediente en el sistema..."*, evitando así que la pantalla se quede en blanco sin avisar nada.
+2. **② Solución al Problema 2 (H2 Lenguaje Ciudadano y Ley de Fitts):** Cambiar las siglas difíciles del menú por palabras claras y adaptar el menú para celulares con botones que tengan un tamaño cómodo de al menos `44 x 44 px` para que sean fáciles de tocar con el dedo.
+3. **③ Solución al Problema 3 (WCAG 2.2 / Contraste):** Usar una combinación de colores adecuada (como azul marino y blanco) para que el texto se lea sin esfuerzo y cumpla con las normas de visibilidad.
+4. **④ Solución al Problema 4 (H8 Minimalismo / Ley de Hick):** Reducir el tamaño de la imagen grande del inicio (carrusel) y agregar un bloque al centro con accesos directos a los trámites que la gente usa más.
+
+### 5.3 Evidencias del Prototipo Rediseñado
+
+#### Vista Desktop (1440 px)
+![redisenio-figma-desktop](assets/redisenio-figma-desktop.png)
+
+#### Vista Mobile (390 px)
+![redisenio-figma-mobile](assets/redisenio-figma-mobile.png)
