@@ -25,7 +25,7 @@
 * **Métricas iniciales de ejecución (Sitio Original):**
   * **Pasos / Clics requeridos:** 3 clics (Inicio ➔ Menú Servicios ➔ Consulta de Licencias / Expedientes).
   * **Tiempo aproximado:** El usuario pasa más de 2 minutos intentando recargar al encontrarse con una pantalla en blanco.
-  * **Dificultad percibida:** Super alta, ya que no existe retroalimentación visual, mensaje de error ni indicador de carga.
+  * **Dificultad percibida:** Catastrófico, ya que no existe retroalimentación visual, mensaje de error ni indicador de carga.
 
 ---
 
@@ -103,3 +103,16 @@
 3. **Ley de Jakob:** La página no sigue la costumbre que la gente ya conoce en otros sitios web municipales modernos, donde los trámites más buscados (como licencias o impuestos) se ponen de forma limpia y directa en tarjetas al centro.
 4. **Ley de Miller:** Hay demasiada información junta en la pantalla y no está dividida en grupos pequeños (de máximo 5 a 7 cosas), lo que satura la mente del usuario al mostrarle listas larguísimas de enlaces sin separar por temas.
 5. **Ley de Proximidad:** Los enlaces de servicios públicos, avisos de la municipalidad y noticias están amontonados unos al lado de otros, sin bordes ni espacios que ayuden a distinguir qué elementos van juntos.
+
+---
+
+## Paso 4: Matriz de diagnóstico
+
+Consolidación de los problemas detectados en la interfaz de la Municipalidad Distrital de El Porvenir, priorizados por severidad según la escala de Jakob Nielsen (0 a 4):
+
+| N° | Problema detectado | Ubicación / evidencia | Heurística o ley vulnerada | Severidad (0 – 4) | Propuesta de mejora |
+|:---:|---|---|---|:---:|---|
+| **1** | Al presionar opciones del menú como "Consulta de Licencias" o "Portal de servicios", la página queda completamente en blanco sin respuesta ni retroalimentación visual. | Menú Servicios ![captura-error](/assets/captura-error-carga.png) y portal de servicios ![captura-error-04](/assets/captura-punto-muerto.png) | H1 Visibilidad del estado del sistema / H5 Prevención de errores | **4** | Deshabilitar los enlaces que no funcionan, mostrar una animación o aviso de carga cuando se esté procesando algo y redirigir a una sección que sí esté activa o mostrar un mensaje claro de que la página está en mantenimiento. |
+| **2** | Menú desplegable utiliza lenguaje de oficina ("TUPA", "CIAM") y los enlaces en celular tienen áreas para presionar muy pequeñas y muy pegadas entre sí. | Vista móvil 390px ![captura-mobile-02](/assets/captura-mobile-02.png) | H2 Relación con el mundo real / Ley de Fitts | **3** | Cambiar los nombres de los menús por palabras más claras que cualquier ciudadano entienda y hacer que los botones sean más grandes (de al menos 44 x 44 px) para que se puedan tocar con comodidad en el celular. |
+| **3** | La portada tiene colores con muy poco contraste (letras azules sobre fondo blanco en el pie de página), lo que dificulta la lectura, además de botones e imágenes que no tienen descripción en la revisión técnica. | Portada e informe Lighthouse 75/100 ![captura-desktop-01](/assets/captura-desktop-01.png)  ![captura-footer](/assets/captura-footer.png) ![captura-puntaje-accesibilidad](/assets/captura-puntaje-accesibilidad.png) | WCAG 2.2 / Ley de Jakob / H4 Consistencia y estándares | **3** | Mejorar los colores para que se distingan bieny logren una relación de contraste mínima de 4.5:1 (WCAG AA)  y agregarle descripciones a las imágenes y a los botones para que sean accesibles |
+| **4** | El carrusel de imágenes de la municipalidad es demasiado grande y ocupa casi toda la pantalla de inicio, lo que empuja los accesos a los trámites principales hacia abajo, obligando al usuario a bajar la página para poder verlos. | Portada principal ![captura-error-05](/assets/captura-carrusel-excesivo.png) | H8 Diseño estético y minimalista / Ley de Hick | **2** | Hacer más pequeño el carrusel de imágenes del inicio y poner una sección destacada con botones o accesos directos a los trámites que más realiza la gente. |
