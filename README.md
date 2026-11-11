@@ -83,7 +83,7 @@
 ### 3.4 Auditoría automática con lighthouse (DevTools)
 * **Puntaje de accesibilidad:** `75 / 100` 
 * **Evidencia:** 
-  ![captura-puntaje-accesibilidad](/assets/captura-puntaje-accesibilidad.png)
+* ![captura-puntaje-accesibilidad](/assets/captura-puntaje-accesibilidad.png)
 ![captura-fallos](/assets/captura-fallos.png)
 
 * **Principales fallos detectados:**
@@ -136,3 +136,30 @@ Rediseñar la sección de consultas para que aparezca un aviso o mensaje en pant
 
 #### Vista Mobile (390 px)
 ![redisenio-figma-mobile](assets/redisenio-figma-mobile.png)
+
+---
+
+## Paso 6: Justificación de cambios y validación
+
+### 6.1 Tabla de Justificación de Cambios
+
+| N° | Cambio realizado | Principio / ley aplicada | Evidencia de mejora (antes → después) |
+|:---:|---|---|---|
+| **1** | Se diseñó una sección de búsqueda de expedientes que muestra un aviso y una animación de carga para confirmar lo que está haciendo el sistema. | H1 Visibilidad del estado del sistema / H5 Prevención de errores | Pantalla en blanco vacía sin respuesta → Aviso en pantalla con el mensaje "Buscando expediente en el sistema...". |
+| **2** | Se cambiaron las palabras difíciles y siglas del menú (como "TUPA" por por "PROCE. ADMIS") y se hicieron los botones del celular más grandes y cómodos de presionar, con un menú ordenado. | H2 Relación con el mundo real / Ley de Fitts | Botones muy pequeños y juntos con siglas confusas → Botones grandes y cómodos de al menos 44 × 44 px con nombres claros que la gente entiende. |
+| **3** | Se ajustó el color de los encabezados e íconos poniendo texto blanco sobre un fondo azul marino, asegurando además que los botones tengan nombres accesibles. | WCAG 1.4.3 Contraste mínimo / WCAG 2.2 | Contraste bajo de 2.8:1 (puntaje de 75/100 en Lighthouse) → Contraste mejorado de 7.2:1 (cumpliendo con el Nivel AA).|
+| **4** | Se redujo el tamaño de la imagen grande del inicio (carrusel) y se agregó un bloque al centro con tres tarjetas para acceder directamente a los trámites más frecuentes. | H8 Diseño estético y minimalista / Ley de Hick | Imagen gigante que ocupaba toda la pantalla principal → Portada ordenada con los trámites clave visibles de inmediato al entrar. |
+
+---
+
+### 6.2 Validación con compañero
+
+Se realizó una prueba de usabilidad de la funcion *"Consultar el estado de un expediente municipal"* en la interfaz original frente al prototipo rediseñado en Figma:
+
+| Métrica de usabilidad | Interfaz original ([muniporvenir.gob.pe](https://muniporvenir.gob.pe)) | Prototipo rediseñado (Figma) | Mejora obtenida |
+|---|:---:|:---:|:---:|
+| **Número de pasos / clics** | 5 clics con navegación frustrada por páginas vacías | 2 clics, ingreso directo desde la tarjeta principal | **60% menos clics** |
+| **Tiempo de ejecución** | 45 segundos, debido a la confusión por menú complicado | 12 segundos | **73% más rápido** |
+| **Número de errores** | 2 errores, debido a clic en enlaces sin respuesta | 0 errores | **100% reducción de errores** |
+
+**Conclusión:** Mi compañero logro ubicar el campo de consulta inmediatamente en la portada sin necesidad de descifrar siglas del menú ni presionar enlaces que llevaban a páginas en blanco.
