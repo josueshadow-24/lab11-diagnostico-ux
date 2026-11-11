@@ -13,16 +13,16 @@
 * **Justificación de elección:** La interfaz presenta serios problemas de usabilidad, como un contraste de texto muy bajo en las barras superiores de navegación, saturación de elementos informativos en la portada y falta de jerarquía visual limpia para trámites y servicios de alta demanda ciudadana.
 
 ### 1.2 Capturas de Pantalla Base
-* **Vista Escritorio (Desktop 1440px):** 
+* **Vista escritorio (Desktop 1440px):** 
 ![captura-desktop-01](/assets/captura-desktop-01.png)
 
-* **Vista Móvil (Mobile 390px):**
+* **Vista móvil (Mobile 390px):**
 * 
   ![captura-mobile-01](/assets/captura-mobile-01.png)
 
 ### 1.3 Definición de la tarea del usuario
 * **Tarea a realizar:** Consultar la validez de una licencia de funcionamiento o el estado de un expediente municipal desde el menú de Servicios.
-* **Métricas iniciales de ejecución (Sitio Original):**
+* **Métricas iniciales de ejecución (Sitio original):**
   * **Pasos / Clics requeridos:** 3 clics (Inicio ➔ Menú Servicios ➔ Consulta de Licencias / Expedientes).
   * **Tiempo aproximado:** El usuario pasa más de 2 minutos intentando recargar al encontrarse con una pantalla en blanco.
   * **Dificultad percibida:** Catastrófico, ya que no existe retroalimentación visual, mensaje de error ni indicador de carga.
@@ -131,17 +131,17 @@ Rediseñar la sección de consultas para que aparezca un aviso o mensaje en pant
 
 ### 5.3 Evidencias del Prototipo Rediseñado
 
-#### Vista Desktop (1440 px)
+#### Vista desktop (1440 px)
 ![redisenio-figma-desktop](assets/redisenio-figma-desktop.png)
 
-#### Vista Mobile (390 px)
+#### Vista mobile (390 px)
 ![redisenio-figma-mobile](assets/redisenio-figma-mobile.png)
 
 ---
 
 ## Paso 6: Justificación de cambios y validación
 
-### 6.1 Tabla de Justificación de Cambios
+### 6.1 Tabla de justificación de cambios
 
 | N° | Cambio realizado | Principio / ley aplicada | Evidencia de mejora (antes → después) |
 |:---:|---|---|---|
